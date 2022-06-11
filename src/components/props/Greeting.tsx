@@ -5,7 +5,7 @@ type GreetProps = {
 };
 
 const Greet = ({ isLoggedIn, name, messageCount = 0 }: GreetProps) => (
-  <div>
+  <div className="bg-green-200 p-5 border-2 border-purple-400 m-4">
     {isLoggedIn ? (
       <h2>
         Hey {name}! You have {messageCount} unread messages
