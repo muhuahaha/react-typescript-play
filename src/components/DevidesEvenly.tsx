@@ -5,30 +5,28 @@ type DevidesEvenlyProps = {
 };
 
 function DevidesEvenly({ funcString }: DevidesEvenlyProps) {
-  console.log(funcString);
-  const [fuu, setFuu] = useState(null);
+  // console.log(funcString);
+  const [fuu, setFuu] = useState<string | null>(null);
 
-  function dividesEvenly(a: number, b: number) {
-    return a % b === 0;
+  function imposterFormula(i: number, p: number): string {
+    return `${Math.floor(100 * (i / p))}%`;
   }
 
-  dividesEvenly(32, 8);
-  const result = useCallback(() => eval(funcString), []);
+  imposterFormula(1, 9);
 
-  console.log(result());
+  const result = useCallback(() => eval(funcString), [funcString]);
+
+  // console.log(result());
 
   useEffect(() => {
     setFuu(result());
   }, [result]);
 
+  console.log(fuu, 'fuuuuuuu');
   return (
     <div>
-      <div className="p-5">
-        <h3>Divides Evenly</h3>
-        Given two integers, a and b, return true if a can be divided evenly by
-        b. Return false otherwise.
-        <div className="text-green-200">{fuu ? fuu.toString() : 'no'}</div>
-        <div />
+      <div className="p-5 bg-blue-300 my-4">
+        <div className="text-slate-600">{fuu?.toString()}</div>
       </div>
     </div>
   );

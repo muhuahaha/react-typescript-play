@@ -2,8 +2,9 @@ import Greeting from './components/props/Greeting';
 import { Person } from './components/props/Person';
 import PersonList from './components/props/PersonList';
 import Status from './components/props/Status';
-import DevidesEvenly from './components/DevidesEvenly';
 import EdabitInput from './components/EdabitInput';
+import { Oscar } from './components/props/Oscar';
+import { Heading } from './components/props/Heading';
 
 function App() {
   const personName = {
@@ -46,7 +47,9 @@ function App() {
           <Status status="success" />
         </div>
         <div>
-          <DevidesEvenly pair={test} />
+          <Oscar>
+            <Heading>Oscar goes to Dicaprio</Heading>
+          </Oscar>
         </div>
         <div>
           <EdabitInput />
